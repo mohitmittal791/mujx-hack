@@ -1,48 +1,52 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const mysql = require('mysql');
 
 const app = express();
-app.use(bodyParser.json());
+const PORT = process.env.PORT || 3000;
+
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost:27017/studentDB', { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('MongoDB connected...'))
+    .catch(err => console.error('Could not connect to MongoDB...', err));
+
+// Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-// MySQL connection
-const db = mysql.createConnection({
-    host: 'localhost',    // or your database host
-    user: 'root',         // your database username
-    password: '',         // your database password
-    database: 'student_db' // name of your database
+// Define Schema
+const studentSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    phone: String,
+    school: String,
+    grade: String,
+    parentsName: String,
+    parentsPhone: String,
+    disabilityType: String,
+    disabilityPercentage: Number,
+    disorderType: String,
+    strength: String
 });
 
-db.connect((err) => {
-    if (err) {
-        console.log('Database connection failed: ', err);
-        return;
-    }
-    console.log('Connected to MySQL Database');
-});
+// Create a model
+const Student = mongoose.model('Student', studentSchema);
 
 // Handle form submission
-app.post('/register', (req, res) => {
-    const { name, email, phone, school, grade, parentsName, parentsPhone, disabilityType, disabilityPercentage, disorderType, strength } = req.body;
-    
-    const sql = 'INSERT INTO students (name, email, phone, school, grade, parentsName, parentsPhone, disabilityType, disabilityPercentage, disorderType, strength) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
-    
-    db.query(sql, [name, email, phone, school, grade, parentsName, parentsPhone, disabilityType, disabilityPercentage, disorderType, strength], (err, result) => {
-        if (err) {
-            console.error('Error inserting data: ', err);
-            res.status(500).send('Database error');
-            return;
-        }
-        res.status(200).send('Registration successful');
-    });
+app.post('/register', async (req, res) => {
+    try {
+        const studentData = new Student(req.body);
+        await studentData.save();
+        res.status(201).send('Student registered successfully!');
+    } catch (error) {
+        res.status(400).send('Error registering student');
+    }
 });
 
-// Serve static HTML and CSS files
+// Serve static files
 app.use(express.static('public'));
 
 // Start the server
-const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
