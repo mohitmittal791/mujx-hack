@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="/css/register.css">
+    <style>
+        /* Basic styles for the slides and buttons */
+        .slide {
+            display: none;
+        }
+        .slide.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Registration Form</h1>
+        <form id="registrationForm" method="POST" action="/register">
+            <!-- Slide 1: Personal Information -->
+            <div class="slide active" id="slide1">
+                <h2>Personal Information</h2><br><br>
+                <label for="name">Full Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email ID:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone" required><br><br>
+                <button type="button" class="nextBtn">Next</button>
+            </div>
+            
+            <!-- Slide 2: Academic Information -->
+            <div class="slide" id="slide2">
+                <h2>Academic Information</h2><br><br>
+                <label for="school">School Name:</label><br>
+                <input type="text" id="school" name="school" required><br><br>
+                <label for="grade">Grade:</label><br>
+                <input type="text" id="grade" name="grade" required><br><br>
+                <label for="parentsName">Parent's Name:</label><br>
+                <input type="text" id="parentsName" name="parentsName" required><br><br>
+                <label for="parentsPhone">Parent's Phone Number:</label><br>
+                <input type="tel" id="parentsPhone" name="parentsPhone" required><br><br>
+                <button type="button" class="prevBtn">Previous</button>
+                <button type="button" class="nextBtn">Next</button>
+            </div>
+            
+            <!-- Slide 3: Disability Information -->
+            <div class="slide" id="slide3">
+                <h2>Disability Information</h2><br><br>
+                <label for="disabilityType">Disability Type:</label><br>
+                <select id="disabilityType" name="disabilityType" required><br><br>
+                    <option value="">Select Disability</option>
+                    <option value="ADHD">ADHD</option>
+                    <option value="Dyslexia">Dyslexia</option>
+                    <option value="Autism">Autism</option>
+                </select><br><br>
+                <label for="disabilityPercentage">Percentage of Disorder:</label><br>
+                <input type="number" id="disabilityPercentage" name="disabilityPercentage" min="0" max="100" required><br><br>
+                <label for="disorderType">Type of Disorder:</label><br>
+                <select id="disorderType" name="disorderType" required><br><br>
+                    <option value="">Select Type</option>
+                    <option value="Physical">Physical</option>
+                    <option value="Mental">Mental</option>
+                    <option value="Both">Both</option>
+                </select><br><br>
+                <label for="strength">Strengths / Interests:</label><br>
+                <textarea id="strength" name="strength" rows="4" placeholder="Mention any specific interests or strengths..."></textarea><br><br>
+                <button type="button" class="prevBtn">Previous</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript to handle slide transitions and form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const nextBtns = document.querySelectorAll('.nextBtn');
+            const prevBtns = document.querySelectorAll('.prevBtn');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+            }
+
+            nextBtns.forEach(button => {
+                button.addEventListener('click', function() {
+                    if (currentSlide < slides.length - 1) {
+                        currentSlide++;
+                        showSlide(currentSlide);
+                    }
+                });
+            });
+
+            prevBtns.forEach(button => {
+                button.addEventListener('click', function() {
+                    if (currentSlide > 0) {
+                        currentSlide--;
+                        showSlide(currentSlide);
+                    }
+                });
+            });
+
+            document.getElementById('registrationForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission behavior
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+
+                // Create a new FormData object
+                const formData = new FormData();
+                formData.append('name', name);
+                formData.append('email', email);
+                formData.append('phone', phone);
+
+                // Send a POST request to the server
+                fetch('http://localhost:3000/register', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    alert('Registration successful!');
+                    console.log(data);
+                    window.location.href = 'quiz.html'; // Redirect to the quiz page
+                })
+                .catch(error => {
+                    alert('Error during registration.');
+                    console.error('Error:', error);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
