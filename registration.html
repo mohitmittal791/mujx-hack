@@ -70,13 +70,23 @@
                 <textarea id="strength" name="strength" rows="4" placeholder="Mention any specific interests or strengths..."></textarea>
                 
                 <button type="button" class="prevBtn">Previous</button>
-                <a href="">
+
                 <button type="submit">Submit</button>
-            </a>
+
             </div></center>
         </form>
     </div>
 
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the default form submission behavior
+            
+            // Here you can handle form validation, if required, or save the data
+            
+            // Redirect to the quiz page
+            window.location.href = 'quiz.html';  // Redirects to the quiz page
+        });
+    </script>
     <script src="/js/register.js"></script>
 </body>
 </html>
