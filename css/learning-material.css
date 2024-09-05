@@ -1,57 +1,210 @@
-body {
-    background-color: #f0f4f8;
-    font-family: Arial, sans-serif;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #4CAF50;
-    color: white;
-}
-
-header nav ul {
-    list-style-type: none;
-    display: flex;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-header nav ul li {
-    margin-right: 20px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.content-container {
-    max-width: 1000px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
+body {
+    background-color: #f0f4f8;
     color: #333;
 }
 
-.material-grid {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
+/* Header */
+.header {
+    background-color: #2c3e50;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 0;
 }
 
-.material {
-    width: 30%;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
+.header h1 {
+    font-size: 2.5rem;
+}
+
+.header p {
+    font-size: 1.2rem;
+}
+
+/* Folder Video Section */
+.folder-video-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
     text-align: center;
+}
+
+.folder-video-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.folder-video-section h2 {
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.folder-video-section p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.folder-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.folder-card {
+    width: 30%;
+    background-color: #f4f4f4;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.folder-card:hover {
+    transform: scale(1.05);
+}
+
+.folder-icon img {
+    width: 80px;
+    height: 80px;
+}
+
+.video-display {
+    margin-top: 40px;
+    display: none; /* Hidden initially */
+}
+
+.video-display h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.video-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Categories Section */
+.categories-section {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.categories-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.categories {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.category {
+    background-color: #e3f2fd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.category h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.category p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.category-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.category-link:hover {
+    text-decoration: underline;
+}
+
+/* Resources Section */
+.resources-section {
+    padding: 50px 20px;
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.resources-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.resource-items {
+    display: flex;
+    justify-content: space-around;
+}
+
+.resource {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.resource h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.resource p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.download-btn {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Footer */
+.footer {
+    background-color: #2c3e50;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
 }

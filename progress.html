@@ -1,38 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Progress - Adaptive Learning</title>
-    <link rel="stylesheet" href="css/progress.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adaptive Learning Progress</title>
+  <link rel="stylesheet" href="/css/progress.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Adaptive Learning</div>
-        <nav>
-            <ul>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="learning-material.html">Learning Material</a></li>
-                <li><a href="settings.html">Settings</a></li>
-                <li><a href="login.html">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="progress-container">
-        <h2>Your Progress</h2>
-        <p>Track your learning progress with real-time insights.</p>
-
-        <div class="chart-container">
-            <div class="chart">
-                <h3>Module Completion</h3>
-                <p>[Chart Placeholder]</p>
-            </div>
-            <div class="chart">
-                <h3>Quiz Performance</h3>
-                <p>[Chart Placeholder]</p>
-            </div>
-        </div>
+  <div class="progress-container">
+    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <span class="progress-value">0%</span>
     </div>
+    <div class="milestone-markers">
+      </div>
+  </div>
+
+  <div class="module-list">
+    </div>
+
+  <script src="/js/progress.js"></script>
 </body>
 </html>

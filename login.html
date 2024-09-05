@@ -64,6 +64,16 @@
 
         // Add event listener to login button
         document.getElementById('loginbutton').addEventListener('click', handleLogin);
+
+       
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the default form submission behavior
+            
+            // Here you can handle form validation, if required, or save the data
+            
+            // Redirect to the quiz page
+            window.location.href = 'dashboard.html';  // Redirects to the quiz page
+        });
     </script>
 </body>
 </html>
