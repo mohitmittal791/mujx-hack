@@ -1,57 +1,71 @@
 body {
-    background-color: #f0f4f8;
     font-family: Arial, sans-serif;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+  }
+  
+  .progress-container {
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .progress-bar {
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .progress-bar::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 0%;
     background-color: #4CAF50;
-    color: white;
-}
-
-header nav ul {
-    list-style-type: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-header nav ul li {
-    margin-right: 20px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.progress-container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    color: #333;
-}
-
-.chart-container {
+    transition: width 0.5s ease;
+  }
+  
+  .progress-value {
+    display: inline-block;
+    margin-left: 5px;
+    color: #fff;
+  }
+  
+  .milestone-markers {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
-}
-
-.chart {
-    width: 45%;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+    margin-top: 10px;
+  }
+  
+  .milestone {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .module-list {
+    margin-top: 20px;
+  }
+  
+  .module {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .module.completed {
+    background-color: #e6ffe6;
+  }
+  
+  .module.in-progress {
+    background-color: #f0f0f0;
+  }
+  
+  .module-title {
+    font-weight: bold;
+  }
+  
+  .module-description {
+    margin-top: 5px;
+  }

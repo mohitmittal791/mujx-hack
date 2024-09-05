@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,4 +39,158 @@
         </div>
     </div>
 </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Materials | Adaptive Learning</title>
+    <link rel="stylesheet" href="/css/learning-material.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Learning Resources</h1>
+        <p>Tailored resources for neurodiverse students to enhance adaptive learning</p>
+    </header>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <h2>Browse Learning Materials</h2>
+        <div class="categories">
+            <div class="category">
+                <h3>For Students</h3>
+                <p>Interactive tools, study guides, and exercises to help students with ADHD, dyslexia, and autism.</p>
+                <a href="#student-resources" class="category-link">Explore Resources</a>
+            </div>
+            <div class="category">
+                <h3>For Parents</h3>
+                <p>Guides and resources to support your child’s learning journey and cater to their unique needs.</p>
+                <a href="#parent-resources" class="category-link">Explore Resources</a>
+            </div>
+            <div class="category">
+                <h3>For Educators</h3>
+                <p>Teaching materials, lesson plans, and toolkits for implementing adaptive learning in the classroom.</p>
+                <a href="#educator-resources" class="category-link">Explore Resources</a>
+            </div>
+        </div>
+    </section>
+    <section id="folder-video-section" class="folder-video-section">
+        <div class="container">
+            <h2>Explore Learning Material by Category</h2>
+            <p>Select a folder to view related videos.</p>
+    
+            <div class="folder-grid">
+                <!-- ADHD Folder -->
+                <div class="folder-card" data-folder="adhd">
+                    <div class="folder-icon">
+                        <img src="https://media.istockphoto.com/id/2077163692/photo/hand-of-black-boy-puts-wooden-cube-with-adhd.jpg?s=1024x1024&w=is&k=20&c=ddDjCggqoFRFswuzZsDzqvj4MyeT9horZ6hUaQJ14j0=" alt="ADHD Folder">
+                    </div>
+                    <h3>ADHD</h3>
+                </div>
+    
+                <!-- Dyslexia Folder -->
+                <div class="folder-card" data-folder="dyslexia">
+                    <div class="folder-icon">
+                        <img src="https://media.istockphoto.com/id/521401739/photo/dyslexia.jpg?s=1024x1024&w=is&k=20&c=5RSIwhLEQfpl-puIfWwuXq_EeoROBH0QmjEJ_ILnqQM=" alt="Dyslexia Folder">
+                    </div>
+                    <h3>Dyslexia</h3>
+                </div>
+    
+                <!-- Autism Folder -->
+                <div class="folder-card" data-folder="autism">
+                    <div class="folder-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/128/4243/4243444.png" alt="Autism Folder">
+                    </div>
+                    <h3>Autism</h3>
+                </div>
+            </div>
+    
+            <!-- Video Display Area -->
+            <div id="video-display" class="video-display" style="display: none;">
+                <h3 id="folder-title"></h3>
+                <div class="video-grid">
+                    <!-- Videos will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <!-- Student Resources Section -->
+    <section id="student-resources" class="resources-section">
+        <h2>Learning Materials for Students</h2>
+        <div class="resource-items">
+            <div class="resource">
+                <h3>Interactive ADHD Study Planner</h3>
+                <p>A customizable planner to help students with ADHD manage their study schedule effectively.</p>
+                <a href="#" class="download-btn">Download PDF</a>
+            </div>
+            <div class="resource">
+                <h3>Dyslexia Reading Tools</h3>
+                <p>Downloadable reading tools to assist students with dyslexia in enhancing reading fluency.</p>
+                <a href="#" class="download-btn">Download Tools</a>
+            </div>
+            <div class="resource">
+                <h3>Autism-Friendly Learning Apps</h3>
+                <p>Interactive apps designed to help students with autism focus on learning and developing skills.</p>
+                <a href="#" class="download-btn">Download Apps</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parent Resources Section -->
+    <section id="parent-resources" class="resources-section">
+        <h2>Learning Materials for Parents</h2>
+        <div class="resource-items">
+            <div class="resource">
+                <h3>Parent Guide for ADHD Support</h3>
+                <p>Comprehensive guide for parents to support children with ADHD in their learning journey.</p>
+                <a href="#" class="download-btn">Download Guide</a>
+            </div>
+            <div class="resource">
+                <h3>Dyslexia Home Learning Toolkit</h3>
+                <p>A set of tools and strategies for parents to assist children with dyslexia at home.</p>
+                <a href="#" class="download-btn">Download Toolkit</a>
+            </div>
+            <div class="resource">
+                <h3>Autism Sensory Learning Guide</h3>
+                <p>Help your child with autism learn better through sensory-focused activities.</p>
+                <a href="#" class="download-btn">Download Guide</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educator Resources Section -->
+    <section id="educator-resources" class="resources-section">
+        <h2>Learning Materials for Educators</h2>
+        <div class="resource-items">
+            <div class="resource">
+                <h3>ADHD Classroom Strategies</h3>
+                <p>Effective classroom strategies and lesson plans for educators working with ADHD students.</p>
+                <a href="#" class="download-btn">Download Strategies</a>
+            </div>
+            <div class="resource">
+                <h3>Dyslexia Teaching Guide</h3>
+                <p>Teaching guide to help educators support students with dyslexia in the classroom.</p>
+                <a href="#" class="download-btn">Download Guide</a>
+            </div>
+            <div class="resource">
+                <h3>Autism Inclusive Lesson Plans</h3>
+                <p>Lesson plans and activities tailored for students with autism to promote inclusivity.</p>
+                <a href="#" class="download-btn">Download Plans</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Adaptive Learning Solutions. All rights reserved.</p>
+    </footer>
+<script src="/js/learning-material.js"></script>
+</body>
 </html>
+
