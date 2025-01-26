@@ -3,4 +3,5 @@ include 'db.php';
 $user_name = $_POST['user_name'];
 $score = $_POST['score'];
 saveScore($conn, $user_name, $score);
+echo json_encode(['status' => 'success']);
 ?>
