@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "your_username";
-$password = "your_password";
+$username = "localhost";
+$password = "root";
 $dbname = "quiz_db";
 
 // Create connection
